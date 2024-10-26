@@ -1,6 +1,7 @@
 import React from 'react';
 // Import other components if they are in different files
 import Header from './Header';
+import '../styling/homepage.css';
 
 function HomePage() {
   return (
