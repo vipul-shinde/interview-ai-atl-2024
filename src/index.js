@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AnalysisPage from './pages/AnalysisPage';
+import InterviewPage from './pages/InterviewPage';
+import ResultsPage from './pages/ResultsPage';
 
 const rootElement = document.getElementById('root');
 
@@ -11,6 +13,8 @@ ReactDOM.createRoot(rootElement).render(
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/AnalysisPage" element={<AnalysisPage />} />
+      <Route path="/InterviewPage" element={<InterviewPage />} />
+      <Route path="/ResultsPage" element={<ResultsPage />} />
     </Routes>
   </BrowserRouter>
 );
