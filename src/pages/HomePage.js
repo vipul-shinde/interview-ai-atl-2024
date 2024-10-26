@@ -75,7 +75,7 @@ const ImageSection = styled.div`
   align-items: flex-start; 
   align-self: flex-start;   
   margin-top: 40px;
-  margin-left: 10%;        
+  margin-left: 23%;        
   text-align: left;       
   
   img {
