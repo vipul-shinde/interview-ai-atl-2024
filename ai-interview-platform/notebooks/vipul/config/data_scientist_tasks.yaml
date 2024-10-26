@@ -1,0 +1,35 @@
+generate_interview_questions:
+  description: >
+    Create a set of interview questions suitable for a {interview_length}-minute {interview_type} interview for a {role_level} {role_title} position.
+
+    The questions should cover general concepts in {role_focus}, as well as some aspects related to the {industry} industry. Ensure that not all questions are focused on the specified industry, to assess the candidate's overall expertise.
+
+    Focus on the following key areas:
+
+    - Technical Expertise:
+      - Core concepts relevant to {specialization} and general data science practices.
+      - Programming skills in languages and frameworks commonly used in this role.
+
+    - Problem-Solving Ability:
+      - Scenarios that assess analytical thinking and approach to real-world problems, both industry-agnostic and some related to {industry}.
+
+    - Project Experience:
+      - Questions about past projects that demonstrate required skills for a {role_level} role.
+
+    - Soft Skills:
+      - Communication and teamwork abilities.
+      - For senior roles, leadership and mentoring skills.
+
+    - Cultural Fit:
+      - Alignment with our company's values and mission.
+      - Motivation and career goals related to the {role_title} position.
+
+  expected_output: >
+    Provide a list of interview questions tailored to the candidate's applied position, suitable for a {interview_length}-minute interview, including:
+
+    - Questions: Clearly stated questions categorized by the key areas listed.
+    - Estimated Time per Question: Suggest an estimated time to spend on each question to fit within the total interview length.
+    - Purpose: Brief explanation of what each question aims to assess.
+    - Difficulty Level: Indicate the difficulty level (e.g., easy, medium, hard) appropriate for a {role_level} candidate.
+
+    Ensure that the questions provide a balanced assessment, covering both general data science topics and some industry-specific elements, without focusing entirely on the {industry} industry.
