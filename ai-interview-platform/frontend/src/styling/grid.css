@@ -1,0 +1,29 @@
+.dropdown__item {
+    cursor: pointer;
+    text-align: left;
+    line-height: 24px;
+    font-size: 14px;
+    a {
+      margin: 8px 16px;
+      text-decoration: none ;
+      display: block;
+      img {
+        margin-right: 12px;
+        vertical-align: -24%;
+        width: 24px;
+      }
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        color: #4a4d55;
+      }
+    }
+  }
+
+  .dropdown__item--large {
+    border-bottom: 1px solid #ededee;
+    a {
+      margin: 16px;
+    }
+  }
+;
