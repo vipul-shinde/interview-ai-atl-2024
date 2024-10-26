@@ -8,28 +8,20 @@ import { Link } from 'react-router-dom';
 const AnalysisPage = () => {
   const questions = [
     {
-      title: "Tell us about yourself:",
-      options: ["Student", "Recent Graduate", "Professional", "Career Changer"]
+      title: "Your first question",
+      options: ["Answer Results", "Body Results"]
     },
     {
-      title: "What role are you preparing for?",
-      options: ["Software Engineer", "Product Manager", "Data Scientist", "Designer", "Business Analyst", "Marketing", "Other"]
+      title: "Your second question",
+      options: ["Answer Results", "Body Results"]
     },
     {
-      title: "Upload your resume:",
-      options: ["Upload PDF", "Upload DOC", "Upload via LinkedIn"]
+      title: "Your third question",
+      options: ["Answer Results", "Body Results"]
     },
     {
-      title: "How long is your interview?",
-      options: ["10 minutes", "15 minutes", "20 minutes", "30 minutes"]
-    },
-    {
-      title: "Interview type:",
-      options: ["Technical", "Behavioral", "Case Study", "Mixed"]
-    },
-    {
-      title: "Ready to get started?",
-      options: [<MyButton />, "Retry Later"]
+      title: "Overall reviews",
+      options: ["General feedback", "Tips for next time", <MyButton />]
     }
   ];
 
@@ -44,7 +36,7 @@ const AnalysisPage = () => {
                       <img src={require("./preview.png")} alt="Description" />
                   </ImageSection>
               </PageTitle>
-              <QuestionTitle>What would you like to practice for?</QuestionTitle>
+              <QuestionTitle>Your Results:</QuestionTitle>
               <OptionsContainer>
                   {questions.map((question, index) => (
                       <OptionCard
