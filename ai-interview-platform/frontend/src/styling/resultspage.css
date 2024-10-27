@@ -5,15 +5,19 @@
   font-family: 'Arial', sans-serif;
 }
 
+.main-content {
+  margin-top: calc(90px + 2rem); /* 90px header height + 2rem extra space */
+  min-height: calc(100vh - 90px);
+}
+
 .results-container {
   max-width: 1200px;
   width: 95%;
-  margin: 6rem auto 2rem; /* Increased top margin */
+  margin: 0 auto 2rem; /* Removed top margin since it's handled by main-content */
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 3rem 2rem 2rem; /* Increased top padding */
-  margin-top: 40px;
+  padding: 3rem 2rem 2rem;
 }
 
 .results-title {

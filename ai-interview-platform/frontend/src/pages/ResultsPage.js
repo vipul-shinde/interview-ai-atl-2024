@@ -7,12 +7,14 @@ const ResultsPage = () => {
   return (
     <div className="results-page">
       <Header /> {/* Use your existing Header component */}
-      <div className="results-container">
-        <h1 className="results-title">Final Feedback Summary: Mock Interview Performance</h1>
-        <Summary />
-        <FeedbackSection title="Verbal Communication" content={verbalCommunicationContent} />
-        <FeedbackSection title="Non-Verbal Communication" content={nonVerbalCommunicationContent} />
-        <FeedbackSection title="Overall Evaluation and Next Steps" content={overallEvaluationContent} />
+      <div className="main-content"> {/* Added this wrapper div */}
+        <div className="results-container">
+          <h1 className="results-title">Final Feedback Summary: Mock Interview Performance</h1>
+          <Summary />
+          <FeedbackSection title="Verbal Communication" content={verbalCommunicationContent} />
+          <FeedbackSection title="Non-Verbal Communication" content={nonVerbalCommunicationContent} />
+          <FeedbackSection title="Overall Evaluation and Next Steps" content={overallEvaluationContent} />
+        </div>
       </div>
     </div>
   );

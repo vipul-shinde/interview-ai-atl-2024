@@ -6,6 +6,7 @@ import AnalysisPage from './pages/AnalysisPage';
 import InterviewPage from './pages/InterviewPage';
 import ResultsPage from './pages/ResultsPage';
 import RealTimeComponent from './pages/RealTime';
+import './index.css'
 
 
 const rootElement = document.getElementById('root');
