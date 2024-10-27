@@ -2,13 +2,21 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
+import datetime
+from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 import warnings
 warnings.filterwarnings('ignore')
 
+# Load the .env file into the environment
+load_dotenv()
+
 from crews import interview_crew, feedback_crew
 from prompts import video_prompt, video_transcript, final_prompt
 from tools.process_video import process_video
+
+# Import mongo and init_db from utils.database
+from utils.database import mongo, init_db
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
@@ -16,6 +24,9 @@ CORS(app)  # Enable CORS
 # Ensure your API key is set as an environment variable
 if not os.environ.get('GOOGLE_API_KEY'):
     raise EnvironmentError('GOOGLE_API_KEY environment variable not set.')
+
+# Initialize the database
+init_db(app)
 
 # Add a route for the root URL
 @app.route('/')
@@ -76,6 +87,14 @@ def process_video_endpoint():
 
         # Call the process_video function
         summary = process_video(video_file_path, analysis_prompt)
+        
+        # Log the video processing details
+        mongo.db.video_processes.insert_one({
+            'video_file_path': video_file_path,
+            'analysis_prompt': analysis_prompt,
+            'summary': summary,
+            'timestamp': datetime.datetime.utcnow()
+        })
 
         # Return the summary
         return jsonify({'summary': summary})
@@ -101,10 +120,20 @@ def start_interview():
             'role_level': data.get('role_level', 'mid-senior'),
             'role_title': data.get('role_title', 'Data Scientist'),
             'specialization': data.get('specialization', 'machine learning'),
+            'timestamp': datetime.datetime.utcnow()
         }
+        
+        # Log inputs to MongoDB
+        mongo.db.interviews.insert_one(inputs)
 
         # Call the crew's kickoff method with the inputs
         result_interview = interview_crew.kickoff(inputs=inputs)
+        
+        # Optionally, update the record with the result
+        mongo.db.interviews.update_one(
+            {'_id': inputs['_id']},
+            {'$set': {'result': result_interview}}
+        )
 
         # Return the result
         return jsonify({'result': result_interview})
@@ -125,13 +154,31 @@ def generate_feedback():
             'feedback_guidelines': data.get('feedback_guidelines', final_prompt),
             'interview_transcript': data.get('interview_transcript', video_transcript)
         }
+        
+        # Log inputs to MongoDB
+        mongo.db.feedbacks.insert_one(inputs)
 
         # Call the crew's kickoff method with the inputs
         feedback_interview = feedback_crew.kickoff(inputs=inputs)
+        
+        # Optionally, update the record with the result
+        mongo.db.feedbacks.update_one(
+            {'_id': inputs['_id']},
+            {'$set': {'result': feedback_interview}}
+        )
 
         # Return the result
         return jsonify({'result': feedback_interview})
 
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
+# Test MongoDB connection
+@app.route('/test-mongo', methods=['GET'])
+def test_mongo():
+    try:
+        mongo.db.test_collection.insert_one({'message': 'MongoDB connection successful'})
+        return jsonify({'status': 'success'})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
