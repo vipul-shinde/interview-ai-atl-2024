@@ -1,0 +1,112 @@
+.results-page {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.results-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 6rem auto 2rem; /* Increased top margin */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem 2rem; /* Increased top padding */
+  margin-top: 40px;
+}
+
+.results-title {
+  font-size: 2.2rem;
+  color: #343a40;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.summary-section {
+  background-color: #e9ecef;
+  padding: 2rem; /* Increased padding */
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.summary-section p {
+  font-size: 1.1rem; /* Slightly larger */
+  line-height: 1.6;
+  color: #495057;
+}
+
+.feedback-section {
+  margin-bottom: 2rem; /* Increased margin */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-toggle {
+  width: 100%;
+  background-color: #f1f3f5;
+  border: none;
+  padding: 1.5rem 2rem; /* Increased horizontal padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-toggle:hover {
+  background-color: #e9ecef;
+}
+
+.section-toggle h2 {
+  font-size: 1.4rem; /* Larger */
+  color: #343a40;
+  margin: 0;
+}
+
+.section-toggle span {
+  font-size: 1.8rem; /* Larger */
+  color: #6c757d;
+}
+
+.section-content {
+  padding: 2rem; /* Increased padding */
+}
+
+.feedback-item {
+  margin-bottom: 2rem; /* Increased margin */
+}
+
+.feedback-item h3 {
+  font-size: 1.2rem; /* Slightly larger */
+  color: #495057;
+  margin-bottom: 0.8rem; /* Increased margin */
+}
+
+.feedback-item ul {
+  padding-left: 2rem; /* Increased padding */
+}
+
+.feedback-item li {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 0.8rem; /* Increased margin */
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    width: 100%;
+    padding: 2rem 1rem 1rem; /* Adjusted padding for mobile */
+    margin-top: 4rem; /* Slightly less top margin on mobile */
+  }
+
+  .section-toggle {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .section-content {
+    padding: 1.5rem;
+  }
+}
