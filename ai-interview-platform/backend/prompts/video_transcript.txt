@@ -1,0 +1,46 @@
+00:03
+user
+Hello!
+00:04
+assistant
+Hi there! Thanks for joining me today. Let's get started. Can you begin by telling me a bit about yourself?
+00:16
+user
+Yeah, I'm happy to tell you a little bit about myself.
+So, my name is Sabina and I'm a recent graduate from the University of Georgia where I studied
+data science and computer science and I'm looking to graduate and gain experience as a data scientist. I'd like to get hands-on experience working on machine learning projects and I have a strong interest in AI so I'm really excited about getting this opportunity.
+to potentially learn more about you and your team.
+00:57
+assistant
+That's great to hear, Sabina! With your background in data science and computer science, you're in a good position to dive into machine learning projects. Speaking of which, could you explain the concept of overfitting and underfitting in machine learning models?
+01:14
+user
+[inaudible]
+Overfitting and underfitting when it comes to machine learning models is definitely a really common challenge. So overfitting typically happens when you have a model that learns the training data all too well and it captures a lot of noise along with the actual signals. So when you push it to production and insert real-world data, the performance becomes really, really low.
+01:47
+user
+simply because the training data was too specific and performed really well in training, but was actually a not-generalized representative data set for...
+production
+Now, underfitting is the opposite issue where the model training fails to capture the underlying patterns in the data and results in really poor performance in both training and testing.
+02:16
+assistant
+Excellent explanation! Now, can you describe a real-world machine learning project you've worked on? I'm interested to hear about your hands-on experience.
+02:27
+user
+Yeah, definitely. I'm happy to talk to you about that. So in my most recent capstone project, I was working for a fintech company and tech startup, actually, and
+The the project was actually like a sentiment analysis model for customer reviews and like We were really working on helping businesses understand customer satisfaction levels and
+Like I gathered and cleaned a pretty large data set of reviews And then I use these NLP techniques to pre-process the text and do some tokenization and stuff like that you know just like word removal and vectorization and then like I built a classification model and That's what the client basically used
+03:29
+assistant
+That sounds like a comprehensive project with real impact. It must have been rewarding to see your model help the client understand customer sentiment better. So, why do you want this data science role? What excites you about it?
+03:39
+user
+Yeah
+Definitely. I think we're actually at time already.
+But thank you so much for this interview.
+03:50
+assistant
+You're welcome, Sabina. It was great talking with you. Best of luck with your job search! Take care.
+03:57
+user
+[inaudible]
