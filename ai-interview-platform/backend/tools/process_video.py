@@ -1,16 +1,9 @@
-from crewai_tools import tool
-#from langchain_core.tools import tool
 import os
 import time
 import google.generativeai as genai
 
-# Set up the Gemini API key in the environment variables
-os.environ["GEMINI_API_KEY"] = ""
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-
-@tool("Upload and Analyze Video with Gemini")
-def upload_video_and_get_summary(video_file_path: str, analysis_prompt: str) -> str:
-    """Uploads a video file to Gemini and gets a summary based on the provided video."""
+def process_video(video_file_path: str, analysis_prompt: str) -> str:
+    """Uploads a video file to Gemini and gets a summary based on the provided prompt."""
     try:
         # Upload the video file
         def upload_to_gemini(path, mime_type=None):
@@ -68,7 +61,7 @@ def upload_video_and_get_summary(video_file_path: str, analysis_prompt: str) -> 
         )
 
         # Send a message to get the summary of the video
-        response = chat_session.send_message(prompt)
+        response = chat_session.send_message(analysis_prompt)
 
         # Return the response text
         return response.text

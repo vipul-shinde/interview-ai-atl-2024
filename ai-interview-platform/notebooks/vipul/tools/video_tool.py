@@ -10,7 +10,7 @@ class UploadVideoAndGetSummaryTool(BaseTool):
     description: str = "Uploads a video file to Gemini and gets a summary based on the provided video."
 
     # Environment variables
-    gemini_api_key: str = os.environ.get("GEMINI_API_KEY", "AIzaSyAg2zlHo7alqplyszLDItc5Ch_DeqBNs1Q")
+    gemini_api_key: str = os.environ.get("GEMINI_API_KEY", "")
 
     # # Input parameters with Pydantic Field definitions
     # video_file_path: str = Field(..., description="Path to the video file to be uploaded.")
