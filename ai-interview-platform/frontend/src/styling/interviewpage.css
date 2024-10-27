@@ -1,0 +1,91 @@
+/* interviewpage.css */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9ff;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 90px;
+  padding: 2rem 0;
+}
+
+.interview-container {
+  width: 900px; /* Increased width for more rectangular shape */
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.interview-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 4/3; /* More square aspect ratio */
+  background: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Separate container for the End Interview button */
+.end-interview-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.end-interview-button {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: #2d3748;
+  text-decoration: none;
+  border: 2px solid #2d3748;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.end-interview-button:hover {
+  background-color: #2d3748;
+  color: white;
+}
+
+/* Adjust header login button position */
+.header-login {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 940px) {
+  .interview-container {
+    width: 95%;
+  }
+}
