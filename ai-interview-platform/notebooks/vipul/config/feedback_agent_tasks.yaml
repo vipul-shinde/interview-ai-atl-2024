@@ -1,0 +1,32 @@
+process_video_with_gemini:
+  description: >
+    Analyze the provided video interview using Gemini to obtain feedback based on the specified criteria.
+
+    - **Input:**
+      - Video Interview File: {video_file_path}
+      - Analysis Prompt: {analysis_prompt}
+
+    - **Actions:**
+      - Send the video file to Gemini for analysis.
+      - Use the analysis prompt to guide Gemini's feedback.
+      - Retrieve and store the feedback received from Gemini.
+
+  expected_output: >
+    - **Gemini Feedback:** The feedback provided by Gemini based on the analysis prompt.
+
+# generate_final_feedback_report:
+#   description: >
+#     Create a comprehensive feedback report for the candidate by integrating the feedback from Gemini and the interview transcript.
+
+#     - **Input:**
+#       - Gemini Feedback: {gemini_feedback}
+#       - Interview Transcript: {interview_transcript}
+#       - Feedback Guidelines: {feedback_guidelines}
+
+#     - **Actions:**
+#       - Analyze the Gemini feedback and the interview transcript.
+#       - Synthesize the information to highlight strengths, areas for improvement, and actionable suggestions.
+#       - Ensure the feedback is constructive, clear, and encouraging.
+
+#   expected_output: >
+#     - **Final Feedback Report:** A document to be shared with the candidate, providing detailed feedback on their interview performance.
