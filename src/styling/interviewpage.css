@@ -1,121 +1,70 @@
 /* interviewpage.css */
-
-/* Main content wrapper */
-
 .color-background {
   background-color: #F0F8FF;
-  display: flex;
-  justify-content: space-around;
+  min-height: 100vh;
 }
 
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0 20px;
-    margin-top: 0; /* Space for fixed header */
-    padding-top: 80px;
-  }
-   
-  /* Image section styles */
-  .image-section {
-    display: flex;
-    padding-top: 80px;
-    flex-direction: column;
-    align-items: flex-start;
-    align-self: flex-start;
-    margin-top: 40px;
-    text-align: center;
-  }
-  
-  .image-section flex {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .image-section h1 {
-    margin-top: 20px;
-  }
-  
-  /* Button section styles */
-  .button-section {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-    font-family: 'Google Sans', Arial, sans-serif;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  /* Question section styles */
-  .question-section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 20 auto;
-  }
-  
-  .question-content {
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-    margin-top: 120px;
-    font-family: 'Google Sans', Arial, sans-serif;
-  }
-  
-  .question-content h1, h2 {
-    margin-bottom: 20px;
-    margin-left: -50px;
-    font-family: 'Google Sans', Arial, sans-serif;
-  }
-  
-  .question-content p {
-    margin-bottom: 30px;
-    margin-left: -50px;
-    line-height: 1.6;
-    font-family: 'Google Sans', Arial, sans-serif;
-  }
-  
-  /* Button styles */
-  .styled-button {
-    color: #000000;
-    background-color: #ffffff;
-    padding: 10px 16px;
-    margin-right: 45px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    border: 2px solid #55559e;
-    border-radius: 4px;
-    transition: all 0.2s ease 0s;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    font-family: 'Google Sans', Arial, sans-serif;
-  }
-  
-  .styled-button:hover {
-    background-color: #55559e;
-    color: #000;
-  }
-  
-  .color-background {
-    background-color: #F0F8FF;
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 80px 20px 20px;
+}
 
-.large-webcam {
-    width: 1000px; 
-    height: 800px; 
-    transform: scale(20); 
-    display: block; 
-    margin: 20px auto; 
-  }
-  
+.question-content {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  font-family: 'Google Sans', Arial, sans-serif;
+}
+
+.question-content h1 {
+  margin-bottom: 20px;
+  font-family: 'Google Sans', Arial, sans-serif;
+}
+
+.webcam-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.webcam-view {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.styled-button {
+  color: #000000;
+  background-color: #ffffff;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 2px solid #55559e;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Google Sans', Arial, sans-serif;
+  display: inline-block;
+}
+
+.styled-button:hover {
+  background-color: #55559e;
+  color: #ffffff;
+}
