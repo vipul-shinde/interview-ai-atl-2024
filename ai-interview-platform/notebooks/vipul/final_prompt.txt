@@ -1,0 +1,15 @@
+Please generate a comprehensive final feedback summary based on the following two inputs:
+
+Interview Transcript:
+
+Summarize the candidate’s performance in terms of content.
+Highlight strengths in their responses to specific questions.
+Identify areas where responses could be improved.
+Offer recommendations for enhancing the quality, conciseness, and relevance of their answers.
+Non-Verbal Video Feedback:
+
+Provide insights into the candidate’s non-verbal communication.
+Assess their engagement, confidence, and professionalism based on non-verbal cues.
+Highlight positive aspects of body language (e.g., eye contact, posture, hand gestures, facial expressions).
+Point out areas for improvement, with actionable tips for presenting themselves more effectively.
+The final summary should combine these insights, presenting an overall evaluation of the candidate’s verbal and non-verbal communication skills. It should offer clear and constructive recommendations for improvement.

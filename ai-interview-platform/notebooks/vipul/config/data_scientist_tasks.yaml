@@ -28,8 +28,5 @@ generate_interview_questions:
     Provide a list of interview questions tailored to the candidate's applied position, suitable for a {interview_length}-minute interview, including:
 
     - Questions: Clearly stated questions categorized by the key areas listed.
-    - Estimated Time per Question: Suggest an estimated time to spend on each question to fit within the total interview length.
-    - Purpose: Brief explanation of what each question aims to assess.
-    - Difficulty Level: Indicate the difficulty level (e.g., easy, medium, hard) appropriate for a {role_level} candidate.
 
     Ensure that the questions provide a balanced assessment, covering both general data science topics and some industry-specific elements, without focusing entirely on the {industry} industry.
