@@ -6,21 +6,18 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Get the MongoDB URI from environment variables
-uri = os.getenv("MONGO_URI")
+# Define a route to accept user data
+# @app.route("/upload", methods=["POST"])
+# def upload_data():
+#     data = request.json
 
-# Initialize MongoDB client
-client = MongoClient(uri)
+#     # Validate that data contains required fields
+#     required_fields = ["name", "role", "resume", "interview_duration", "interview_type"]
+#     for field in required_fields:
+#         if field not in data:
+#             return jsonify({"error": f"{field} is required"}), 400
 
-# Access the specific database
-db = client["AI_ATL"]
+#     # Insert data into MongoDB
+#     collection.insert_one(data)
 
-# Helper functions to access collections
-def get_users_collection():
-    return db["Users"]
-
-def get_responses_collection():
-    return db["Responses"]
-
-def get_feedback_collection():
-    return db["Feedback"]
+#     return jsonify({"message": "Data uploaded successfully!"}), 201
