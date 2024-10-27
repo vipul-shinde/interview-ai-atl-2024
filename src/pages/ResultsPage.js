@@ -12,24 +12,24 @@ const AnalysisPage = () => {
 
   const questions = [
     {
-      title: "Current position:",
-      options: ["Student", "Recent Graduate", "Professional", "Career Changer"]
+      title: "Question 1: What was this question?",
+      options: ["Verbal Notes:", "Non-Verbal Notes:"]
     },
     {
-      title: "Prospective role:",
-      options: ["Software Engineer", "Product Manager", "Data Scientist", "Designer", "Business Analyst", "Marketing", "Other"]
+      title: "Question 2: Not sure what this was?",
+      options: ["Verbal Notes:", "Non-Verbal Notes:"]
     },
     {
-      title: "Upload resume:",
-      options: ["Upload PDF", "Upload DOC", "Upload via LinkedIn"]
+      title: "Question 3: another question guys yay",
+      options: ["Verbal Notes:", "Non-Verbal Notes:"]
     },
     {
-      title: "Interview length:",
-      options: ["10 minutes", "15 minutes", "20 minutes", "30 minutes"]
+      title: "General Notes:",
+      options: ["Verbal Notes:", "Non-Verbal Notes:"]
     },
     {
-      title: "Interview type:",
-      options: ["Technical", "Behavioral", "Case Study", "Mixed"]
+      title: "Future Recommendations: ",
+      options: ["Verbal Notes:", "Non-Verbal Notes:"]
     },
     // ... other questions
   ];
@@ -46,7 +46,7 @@ const AnalysisPage = () => {
           <div>
             <Header />
           </div>
-          <h1 className="question-title">Customize your Interview:</h1>
+          <h1 className="question-title">Interview feedback and review: </h1>
           <div className="options-container">
             {questions.map((question, index) => (
               <OptionCard
@@ -57,14 +57,9 @@ const AnalysisPage = () => {
               />
             ))}
           </div>
-          <div> 
-            {/* Selected Options (for testing) */}
-            <h2>Selected Options:</h2>
-            <pre>{JSON.stringify(selectedOptions, null, 2)}</pre>
-          </div>
 
           <div>
-        <Link to="/InterviewPage">
+        <Link to="/HomePage">
           <div className="button-section">
             <span><MyButton /></span>
           </div>
@@ -82,7 +77,7 @@ const AnalysisPage = () => {
 const MyButton = () => {
   return (
     <div className="button-container">
-      <a className="styled-button">I'm Ready</a>
+      <a className="styled-button">Home</a>
     </div>
   );
 };

@@ -1,30 +1,36 @@
-/* homepage.css */
+/* interviewpage.css */
 
 /* Main content wrapper */
-.content-wrapper { 
-  min-height: 100vh;
-  padding: 2rem;
+
+.color-background {
+  background-color: #F0F8FF;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     padding: 0 20px;
-    margin-top: 90px; /* Space for fixed header */
+    margin-top: 0; /* Space for fixed header */
+    padding-top: 80px;
   }
-  
+   
   /* Image section styles */
   .image-section {
     display: flex;
+    padding-top: 80px;
     flex-direction: column;
     align-items: flex-start;
     align-self: flex-start;
     margin-top: 40px;
-    margin-left: 10%;
-    text-align: left;
+    text-align: center;
   }
   
-  .image-section img {
+  .image-section flex {
     max-width: 100%;
     height: auto;
   }
@@ -37,9 +43,7 @@
   .button-section {
     display: flex;
     justify-content: center;
-
     margin: 30px 0;
-    margin-top: 0px;
     font-family: 'Google Sans', Arial, sans-serif;
   }
   
@@ -49,30 +53,30 @@
     width: 100%;
   }
   
-  /* About section styles */
-  .about-section {
+  /* Question section styles */
+  .question-section {
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20 auto;
   }
   
-  .about-content {
+  .question-content {
     text-align: center;
     width: 100%;
     padding: 20px;
+    margin-top: 120px;
     font-family: 'Google Sans', Arial, sans-serif;
   }
   
-  .about-content h2,
-  .about-content h3 {
+  .question-content h1, h2 {
     margin-bottom: 20px;
     margin-left: -50px;
     font-family: 'Google Sans', Arial, sans-serif;
   }
   
-  .about-content p {
+  .question-content p {
     margin-bottom: 30px;
     margin-left: -50px;
     line-height: 1.6;
@@ -104,5 +108,14 @@
   .color-background {
     background-color: #F0F8FF;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
+
+.large-webcam {
+    width: 1000px; 
+    height: 800px; 
+    transform: scale(20); 
+    display: block; 
+    margin: 20px auto; 
+  }
+  
