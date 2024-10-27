@@ -1,26 +1,22 @@
 import React from 'react';
 import Header from './Header';
 import '../styling/homepage.css';
-import "./preview.png";
+import "./bgflogo.png";
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
     <>
-    <div className="background-color">
+    <div className="color-background">
       <div>
         <Header />
       </div>
       <div className="content-wrapper">
         <div className="HomePage">
           <div className="image-section">
-            <img src={require("./preview.png")} alt="Description" />
+            <img src={require("./bgflogo.png")} alt="Description" />
           </div>
-          <Link to="/AnalysisPage">
-            <div className="button-section">
-              <span><MyButton /></span>
-            </div>
-          </Link>
+
           <div className="about-section">
             <AboutPage />
           </div>
@@ -42,16 +38,21 @@ const MyButton = () => {
 
 function AboutPage() {
   return (
+    <div className="center">
     <div className="about-content">
-      <h2>About Pre-(inter)-View</h2>
+      <h2>About Pre-View</h2>
       <h3>Our Product</h3>
+      <div className="about-container"> 
       <p>
-        We deliver the opportunity for students to prepare for any job interview,
-        regardless of background, experience, and industry. By using our platform, you receive automatic
-        feedback from AI-powered software on body language, interview answers, and facial expressions.
+      Pre-view is your personal interview coach, designed to help you ace any interview!
+      We strive to provide a private space to practice and receive targeted feedback on your responses and nonverbal cues.
         <br />
       </p>
-      <a className="styled-button">Try it now!</a>
+      </div>
+      <Link to="/AnalysisPage">
+              <span><MyButton /></span>
+          </Link>
+        </div>
     </div>
   );
 }
