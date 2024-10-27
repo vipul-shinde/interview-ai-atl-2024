@@ -1,29 +1,34 @@
-/* homepage.css */
-
+/* General Page Styling */
 .color-background {
     background-color: #F0F8FF;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ensures vertical centering */
+    padding: 2rem;
 }
 
+/* Content Wrapper - Centers the content horizontally */
 .content-wrapper {
     margin-top: 90px; /* Space for header */
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Vertical alignment */
     width: 100%;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Image section styles */
+/* Image Section - Centers images within the section */
 .image-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 2rem 0;
 }
@@ -34,7 +39,7 @@
     margin-bottom: 1.5rem;
 }
 
-/* Main heading style */
+/* Heading and Subtitle Styling - Center aligned */
 .main-heading {
     text-align: center;
     color: #333;
@@ -51,17 +56,18 @@
     font-family: 'Google Sans', Arial, sans-serif;
 }
 
-/* Button section styles */
+/* Button Section - Horizontally and Vertically Centered */
 .button-section {
     width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: center; /* Horizontal alignment */
     margin: 2rem 0;
 }
 
 .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Ensures buttons are horizontally aligned */
 }
 
 .styled-button {
@@ -87,9 +93,8 @@
     box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
 }
 
-/* About section styles */
+/* About Section - Centers the content and applies styling */
 .about-section {
-    align-items: center;
     width: 100%;
     max-width: 800px;
     margin: 3rem auto;
@@ -97,12 +102,15 @@
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers content vertically */
 }
 
 .about-content {
     text-align: center;
     padding: 1rem;
-    align-items: center;
 }
 
 .about-content h2 {
@@ -124,17 +132,20 @@
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
     margin: 1rem 0;
+    display: flex;
     align-items: center;
+    justify-content: center; /* Centers content inside the container */
 }
 
 .about-content p {
     color: #5f6368;
-    line-height: 1.8;
     font-size: 1.1rem;
+    line-height: 1.8;
     margin-bottom: 2rem;
     font-family: 'Google Sans', Arial, sans-serif;
 }
 
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .content-wrapper {
         padding: 1rem;
@@ -142,6 +153,7 @@
     
     .image-section img {
         max-width: 300px;
+        align-items: center;
     }
     
     .main-heading {
@@ -151,5 +163,11 @@
     .about-section {
         margin: 2rem 1rem;
         padding: 1.5rem;
+        align-items: center;
     }
+}
+
+.center {
+    width: 500;
+    margin: 2rem 1rem;
 }

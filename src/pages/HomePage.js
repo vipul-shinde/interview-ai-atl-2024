@@ -42,6 +42,7 @@ const MyButton = () => {
 
 function AboutPage() {
   return (
+    <div className="center">
     <div className="about-content">
       <h2>About Pre-View</h2>
       <h3>Our Product</h3>
@@ -54,6 +55,7 @@ function AboutPage() {
       </p>
       </div>
       <a className="styled-button">Try it now!</a>
+    </div>
     </div>
   );
 }
