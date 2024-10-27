@@ -1,0 +1,70 @@
+/* interviewpage.css */
+.color-background {
+  background-color: #F0F8FF;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 80px 20px 20px;
+}
+
+.question-content {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  font-family: 'Google Sans', Arial, sans-serif;
+}
+
+.question-content h1 {
+  margin-bottom: 20px;
+  font-family: 'Google Sans', Arial, sans-serif;
+}
+
+.webcam-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.webcam-view {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.styled-button {
+  color: #000000;
+  background-color: #ffffff;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 2px solid #55559e;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Google Sans', Arial, sans-serif;
+  display: inline-block;
+}
+
+.styled-button:hover {
+  background-color: #55559e;
+  color: #ffffff;
+}
