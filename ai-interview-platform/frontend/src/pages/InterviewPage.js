@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import Header from './Header';
+import '../styling/interviewpage.css';
 
 function InterviewPage() {
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
+  const [isEnabled, setIsEnabled] = useState({ video: true, audio: true });
 
   const handleDataAvailable = ({ data }) => {
     if (data.size > 0) {
@@ -17,14 +19,12 @@ function InterviewPage() {
 
   const startRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({
-      video: true,
-      audio: true,
+      video: isEnabled.video,
+      audio: isEnabled.audio,
     });
 
-    // Update the state to reflect that recording has started
     setCapturing(true);
-
-    mediaRecorderRef.current = new MediaRecorder(stream, { mimeType: 'video/webm' }); // Or 'video/mp4' if supported
+    mediaRecorderRef.current = new MediaRecorder(stream, { mimeType: 'video/webm' });
     mediaRecorderRef.current.ondataavailable = handleDataAvailable;
     mediaRecorderRef.current.start();
   };
@@ -36,82 +36,81 @@ function InterviewPage() {
 
   const downloadVideo = () => {
     if (recordedChunks.length) {
-      const blob = new Blob(recordedChunks, { type: 'video/webm' }); // Or 'video/mp4'
+      const blob = new Blob(recordedChunks, { type: 'video/webm' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
       a.style = 'display: none';
       a.href = url;
-      a.download = 'react-webcam-stream-capture.webm'; // Or .mp4
+      a.download = 'interview-recording.webm';
       a.click();
       window.URL.revokeObjectURL(url);
       setRecordedChunks([]);
     }
   };
 
+  const toggleMedia = (type) => {
+    setIsEnabled(prev => ({
+      ...prev,
+      [type]: !prev[type]
+    }));
+  };
+
   return (
-    <div className="App">
-      <h1>React Webcam Recording</h1>
-      <Webcam audio={true} ref={webcamRef} />
+    <div className="color-background">
+      <Header />
+      <div className="content-wrapper">
+        <div className="question-content">
+          <h1>Welcome to your Interview</h1>
+        </div>
+        
+        <div className="webcam-container">
+          <Webcam
+            audio={isEnabled.audio}
+            video={isEnabled.video}
+            ref={webcamRef}
+            className="webcam-view"
+          />
+        </div>
 
-      {capturing ? (
-        <button onClick={stopRecording}>Stop Recording</button>
-      ) : (
-        <button onClick={startRecording}>Start Recording</button>
-      )}
+        <div className="buttons-row">
+          <button 
+            className="styled-button"
+            onClick={() => toggleMedia('video')}
+          >
+            {isEnabled.video ? 'Disable Video' : 'Enable Video'}
+          </button>
+          
+          <button 
+            className="styled-button"
+            onClick={() => toggleMedia('audio')}
+          >
+            {isEnabled.audio ? 'Disable Audio' : 'Enable Audio'}
+          </button>
 
-      {recordedChunks.length > 0 && (
-        <button onClick={downloadVideo}>Download Recording</button>
-      )}
-      <h1> Camera </h1>
+          <button 
+            className="styled-button"
+            onClick={capturing ? stopRecording : startRecording}
+          >
+            {capturing ? 'Stop Recording' : 'Start Recording'}
+          </button>
 
-      <Link to="/ResultsPage">
-                  <ButtonSection>
-                      <span> <MyButton /> </span>
-                  </ButtonSection>
-              </Link>
+          {recordedChunks.length > 0 && (
+            <button 
+              className="styled-button"
+              onClick={downloadVideo}
+            >
+              Download Recording
+            </button>
+          )}
 
+          <Link to="/ResultsPage" className="styled-button">
+            Results Page
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
-const MyButton = (props) => {
-    return (
-      <ButtonContainer>
-        <StyledButton>End Interview</StyledButton>
-      </ButtonContainer>
-    );
-  }
-
-  const ButtonSection = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`;
-
-const StyledButton = styled.a`
-  color: #000000;
-  background-color: rgba(255, 255, 255, 255);
-  padding: 10px 16px;
-  margin-right: 45px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border: 2px solid #55559e;
-  border-radius: 4px;
-  transition: all 0.2s ease 0s;
-  cursor: pointer;
-  display: inline-block;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #55559e;
-    color: #000;
-  }
-`;
 
 export default InterviewPage;
