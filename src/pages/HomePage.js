@@ -16,11 +16,7 @@ const HomePage = () => {
           <div className="image-section">
             <img src={require("./bgflogo.png")} alt="Description" />
           </div>
-          <Link to="/AnalysisPage">
-            <div className="button-section">
-              <span><MyButton /></span>
-            </div>
-          </Link>
+
           <div className="about-section">
             <AboutPage />
           </div>
@@ -48,14 +44,15 @@ function AboutPage() {
       <h3>Our Product</h3>
       <div className="about-container"> 
       <p>
-        We deliver the opportunity for students to prepare for any job interview,
-        regardless of background, experience, and industry. By using our platform, you receive automatic
-        feedback from AI-powered software on body language, interview answers, and facial expressions.
+      Pre-view is your personal interview coach, designed to help you ace any interview!
+      We strive to provide a private space to practice and receive targeted feedback on your responses and nonverbal cues.
         <br />
       </p>
       </div>
-      <a className="styled-button">Try it now!</a>
-    </div>
+      <Link to="/AnalysisPage">
+              <span><MyButton /></span>
+          </Link>
+        </div>
     </div>
   );
 }

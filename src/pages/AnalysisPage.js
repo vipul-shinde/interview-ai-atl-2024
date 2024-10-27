@@ -92,8 +92,6 @@ const handleOptionSelect = (questionTitle, selectedOption) => {
                     type="radio"
                     name={title}
                     value={option}
-                    checked={selectedOptions[title] === option} 
-                    onChange={() => onSelect(title, option)} 
                   />
                   {option}
                 </label>
@@ -124,10 +122,6 @@ const handleOptionSelect = (questionTitle, selectedOption) => {
           </div>
 
           {/* Display selectedOptions (for testing) */}
-          <div>
-            <h2>Selected Options:</h2>
-            <pre>{JSON.stringify(selectedOptions, null, 2)}</pre>
-          </div>
 
           <div>
             <Link to="/InterviewPage">
