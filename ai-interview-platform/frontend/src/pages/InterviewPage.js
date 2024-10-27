@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 import '../styling/interviewpage.css';
 
 const InterviewPage = () => {
@@ -71,6 +72,13 @@ const InterviewPage = () => {
       URL.revokeObjectURL(url);
       setRecordedChunks([]);
     }
+  };
+
+  const toggleMedia = (type) => {
+    setIsEnabled(prev => ({
+      ...prev,
+      [type]: !prev[type]
+    }));
   };
 
   return (

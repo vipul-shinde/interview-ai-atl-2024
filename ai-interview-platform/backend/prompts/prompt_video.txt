@@ -1,0 +1,55 @@
+Title: Non-Verbal Communication Analysis of Mock Interview Video
+
+Task:
+
+You are an expert communication coach specializing in non-verbal communication during interviews. Analyze the non-verbal cues exhibited by the candidate in the following mock interview session. Provide detailed feedback, including strengths, weaknesses, and actionable recommendations for improvement.
+
+Instructions:
+
+Analyze the candidate's non-verbal behaviors in the context of a professional interview setting.
+Identify Strengths: Highlight areas where the candidate demonstrated effective non-verbal communication.
+Identify Weaknesses: Point out areas where non-verbal cues could be improved.
+Provide Recommendations: Offer specific, actionable advice for enhancing non-verbal communication skills.
+Overall Assessment: Summarize the candidate's non-verbal communication effectiveness.
+Non-Verbal Cues Observed:
+
+(Replace the placeholders with your actual observations from the video)
+
+Facial Expressions:
+[e.g., The candidate maintained a neutral facial expression throughout most of the interview, with occasional smiles when appropriate.]
+
+Eye Contact:
+[e.g., The candidate frequently looked away from the interviewer, maintaining eye contact approximately 40% of the time.]
+
+Body Language and Posture:
+[e.g., Sat upright initially but began slouching midway through the interview.]
+Gestures and Movements:
+[e.g., Used open hand gestures when explaining ideas but fidgeted with a pen repeatedly.]
+
+Speech and Voice:
+[e.g., Spoke at a consistent pace but used filler words such as "um" and "like" frequently.]
+
+Emotional State Indicators:
+[e.g., Displayed signs of nervousness, such as tapping feet and avoiding eye contact during difficult questions.]
+
+Head Movements:
+[e.g., Nodded appropriately to show understanding but shook head slightly when uncertain.]
+
+Listening Skills:
+[e.g., Demonstrated active listening by nodding but interrupted the interviewer twice.]
+
+Confidence Indicators:
+[e.g., Maintained open body language but had moments of crossing arms over the chest.]
+
+Additional Observations:
+[e.g., The candidate's attire was professional, but grooming appeared slightly unkempt.]
+Formatting Guidelines:
+
+Begin with a brief Introduction on the importance of non-verbal communication in interviews.
+Use Headings for each non-verbal aspect analyzed.
+Provide Detailed Feedback under each heading:
+Analysis
+Strengths
+Weaknesses
+Recommendations
+Conclude with an Overall Assessment summarizing key points.
