@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 export const useAudioPlayback = () => {
   const audioPlayerRef = useRef(null);
   const completeAudioChunks = useRef([]);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const createWavHeader = (pcmDataLength) => {
+  const createWavHeader = useCallback((pcmDataLength) => {
     const header = new ArrayBuffer(44);
     const view = new DataView(header);
     
@@ -30,14 +30,14 @@ export const useAudioPlayback = () => {
     view.setUint32(40, pcmDataLength, true);
     
     return new Uint8Array(header);
-  };
+  }, []);
 
   /**
    * Handles 'response.audio.delta' events from the server.
    * Accumulates audio data chunks.
    * @param {Object} data - The event data.
    */
-  const handleResponseAudioDelta = (data) => {
+  const handleResponseAudioDelta = useCallback((data) => {
     const pcmData = data.delta;
     if (!pcmData) return;
   
@@ -63,17 +63,20 @@ export const useAudioPlayback = () => {
     } catch (error) {
       console.error('Error processing audio:', error);
     }
-  };
+  }, [createWavHeader]);
 
   useEffect(() => {
+    // Store ref in variable for cleanup
+    const currentAudioPlayer = audioPlayerRef.current;
+    
     return () => {
-      if (audioPlayerRef.current?.src) {
-        URL.revokeObjectURL(audioPlayerRef.current.src);
+      if (currentAudioPlayer?.src) {
+        URL.revokeObjectURL(currentAudioPlayer.src);
       }
     };
   }, []);
   
-  const playCollectedChunks = () => {
+  const playCollectedChunks = useCallback(() => {
     if (completeAudioChunks.current.length === 0) return;
     
     const playNextChunk = (index) => {
@@ -142,12 +145,17 @@ export const useAudioPlayback = () => {
       setIsPlaying(true);
       playNextChunk(0);
     }, 50);
-  };
+  }, [setIsPlaying], completeAudioChunks, audioPlayerRef);
 
   // Return the functions and variables needed for the component
   return {
+    // Refs
     audioPlayerRef,
+  
+    // State
     isPlaying,
+    
+    // Methods
     handleResponseAudioDelta,
     playCollectedChunks,
   };
